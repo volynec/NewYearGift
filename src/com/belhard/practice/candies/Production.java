@@ -52,6 +52,33 @@ public abstract class Production {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Production that = (Production) o;
+
+        if (Double.compare(that.cost, cost) != 0) return false;
+        if (weight != that.weight) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        return type != null ? type.equals(that.type) : that.type == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        temp = Double.doubleToLongBits(cost);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + weight;
+        return result;
+    }
+
+    @Override
+
     public String toString() {
         return
                 name + "    " + type + "    " + cost + "    "+ weight+ "    ";
