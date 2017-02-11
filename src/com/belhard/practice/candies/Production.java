@@ -15,9 +15,7 @@ public abstract class Production {
     }
 
     public String getName() {
-        if (name.isEmpty() || name == null) {
-            System.out.println("Введите значение!");
-        }
+
         return name;
     }
 
@@ -27,9 +25,7 @@ public abstract class Production {
     }
 
     public String getType() {
-        if (type.isEmpty() || type == null) {
-            System.out.println("Введите значение!");
-        }
+
         return type;
     }
 
@@ -38,9 +34,7 @@ public abstract class Production {
     }
 
     public double getCost() {
-        if (cost < 0) {
-            System.out.println("Введите значение!");
-        }
+
         return cost;
     }
 
@@ -49,13 +43,17 @@ public abstract class Production {
     }
 
     public double getWeight() {
-        if (weight < 0) {
-            System.out.println("Введите значение!");
-        }
+
         return weight;
     }
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return
+                name + "    " + type + "    " + cost + "    "+ weight+ "    ";
     }
 }

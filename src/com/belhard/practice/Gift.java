@@ -44,9 +44,7 @@ public class Gift {
         int i = 1;
         System.out.println("ID: " + " NAME:    " + "  TYPE: " + "   COST:  " + "  WEIGHT:");
         for (Production value : list) {
-
-            System.out.println(i + ".   " + value.getName() + "    " + value.getType() + "       " + value.getCost()
-                    + "     " + value.getWeight());
+            System.out.println(i + ".   " + value.toString());
             i++;
         }
 
